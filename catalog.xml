@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AppCatalog xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides">
+  <Apps>
+    <App>
+      <ManifestLocation>https://tanakay543.github.io/powerpoint_add/manifest.xml</ManifestLocation>
+    </App>
+  </Apps>
+</AppCatalog>
