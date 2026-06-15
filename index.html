@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPT Quick Insert - インストール方法</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'BIZ UDPゴシック', 'Yu Gothic', 'Meiryo', sans-serif;
+            line-height: 1.6;
+            color: #161616;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #0F62FE 0%, #8A3FFC 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        .content {
+            padding: 2rem;
+        }
+        .section {
+            margin-bottom: 2rem;
+        }
+        .section h2 {
+            color: #0F62FE;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #0F62FE;
+            padding-bottom: 0.5rem;
+        }
+        .steps {
+            background: #F4F4F4;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        .steps h3 {
+            color: #525252;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        .step {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+        .step::before {
+            content: "▶";
+            position: absolute;
+            left: 0;
+            color: #0F62FE;
+        }
+        .code-block {
+            background: #161616;
+            color: #F4F4F4;
+            padding: 1rem;
+            border-radius: 6px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #0F62FE 0%, #8A3FFC 100%);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.2s;
+            box-shadow: 0 4px 12px rgba(15, 98, 254, 0.3);
+        }
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(15, 98, 254, 0.4);
+        }
+        .warning {
+            background: #FFF3CD;
+            border-left: 4px solid #FFC107;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+        .success {
+            background: #D4EDDA;
+            border-left: 4px solid #28A745;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            background: #F4F4F4;
+            color: #525252;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 PPT Quick Insert</h1>
+            <p>ITコンサル向け 頻出オブジェクト ワンクリック挿入ツール</p>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2>📥 インストール方法</h2>
+
+                <div class="success">
+                    <strong>✓ インターネット接続が必要です</strong><br>
+                    このアドインはGitHub Pagesからコンテンツを読み込みます
+                </div>
+
+                <div style="text-align: center; margin: 2rem 0;">
+                    <a href="manifest.xml" download class="download-btn">
+                        📄 manifest.xml をダウンロード
+                    </a>
+                </div>
+
+                <div class="steps">
+                    <h3>🍎 Mac の場合</h3>
+                    <div class="code-block">curl -o ~/Downloads/manifest.xml https://tanakay543.github.io/powerpoint_add/manifest.xml
+cp ~/Downloads/manifest.xml ~/Library/Containers/com.microsoft.Powerpoint/Data/Documents/wef/</div>
+                    <div class="step">ターミナルで上記コマンドを実行</div>
+                    <div class="step">PowerPointを完全に終了して再起動</div>
+                    <div class="step">挿入 → 個人用アドイン → PPT Quick Insert</div>
+                </div>
+
+                <div class="steps">
+                    <h3>🪟 Windows の場合</h3>
+                    <div class="step">上の「manifest.xmlをダウンロード」ボタンをクリック</div>
+                    <div class="step">ダウンロードしたファイルを以下のフォルダにコピー：</div>
+                    <div class="code-block">C:\Users\&lt;ユーザー名&gt;\AppData\Local\Microsoft\Office\16.0\Wef\</div>
+                    <div class="step">PowerPointを完全に終了して再起動</div>
+                    <div class="step">挿入 → 個人用アドイン → PPT Quick Insert</div>
+                </div>
+
+                <div class="warning">
+                    <strong>⚠️ フォルダが見つからない場合</strong><br>
+                    エクスプローラーのアドレスバーに <code>%LOCALAPPDATA%\Microsoft\Office\16.0\Wef</code> を貼り付けてEnterキーを押してください
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🎯 機能</h2>
+                <div class="step">2×2マトリクス、プロセスフロー等の図解</div>
+                <div class="step">SWOT、3C、4P等のフレームワーク</div>
+                <div class="step">Before/After、ロードマップ等の比較図</div>
+                <div class="step">システム構成図、WBS等のIT特化オブジェクト</div>
+                <div class="step">ブランドカラー自動適用</div>
+            </div>
+
+            <div class="section">
+                <h2>❓ トラブルシューティング</h2>
+                <div class="steps">
+                    <h3>アドインが表示されない場合</h3>
+                    <div class="step">manifest.xmlが正しいフォルダにあるか確認</div>
+                    <div class="step">PowerPointを完全に終了して再起動（すべてのウィンドウを閉じる）</div>
+                    <div class="step">インターネット接続を確認</div>
+                </div>
+
+                <div class="steps">
+                    <h3>動作確認</h3>
+                    <div class="step">以下のURLにアクセスして、画面が表示されるか確認：</div>
+                    <a href="taskpane.html" target="_blank" style="color: #0F62FE; text-decoration: none; font-weight: bold;">
+                        https://tanakay543.github.io/powerpoint_add/taskpane.html
+                    </a>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🔄 アップデート</h2>
+                <div class="success">
+                    <strong>✓ 自動アップデート対応</strong><br>
+                    manifest.xmlを一度インストールすれば、機能の更新は自動的に反映されます（PowerPoint再起動時）
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Made with ❤️ for IT Consultants</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+                <a href="https://github.com/tanakay543/powerpoint_add" style="color: #0F62FE; text-decoration: none;">GitHub Repository</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

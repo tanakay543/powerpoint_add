@@ -1,0 +1,63 @@
+{
+  "name": "powerpoint-add",
+  "version": "0.1.0",
+  "description": "ITコンサル向け PowerPoint アドオン（頻出オブジェクト ワンクリック挿入ツール）",
+  "author": "tanakayuk",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "start": "ELECTRON_DISABLE_GPU=1 office-addin-debugging start manifest.xml",
+    "stop": "office-addin-debugging stop manifest.xml",
+    "build": "webpack --mode production",
+    "build:dev": "webpack --mode development",
+    "dev-server": "ELECTRON_DISABLE_GPU=1 webpack serve --mode development",
+    "sideload": "office-addin-debugging start manifest.xml desktop",
+    "validate": "office-addin-manifest validate manifest.xml",
+    "deploy:gh-pages": "npm run build && gh-pages -d dist",
+    "lint": "eslint 'src/**/*.{ts,tsx}'",
+    "lint:fix": "eslint 'src/**/*.{ts,tsx}' --fix",
+    "format": "prettier --write 'src/**/*.{ts,tsx,json,md}'",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@fluentui/react-components": "^9.46.0",
+    "@fluentui/react-icons": "^2.0.224",
+    "playwright": "^1.60.0",
+    "pptxgenjs": "^4.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sharp": "^0.35.1",
+    "zustand": "^4.4.7"
+  },
+  "devDependencies": {
+    "@types/office-js": "^1.0.377",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "eslint": "^8.50.0",
+    "eslint-plugin-react": "^7.33.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "gh-pages": "^6.3.0",
+    "html-loader": "^5.1.0",
+    "html-webpack-plugin": "^5.5.3",
+    "office-addin-debugging": "^5.0.0",
+    "office-addin-dev-certs": "^1.12.0",
+    "office-addin-manifest": "^1.13.0",
+    "prettier": "^3.0.0",
+    "source-map-loader": "^4.0.1",
+    "ts-loader": "^9.4.4",
+    "typescript": "^5.2.0",
+    "vitest": "^1.0.0",
+    "webpack": "^5.88.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}
